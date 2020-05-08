@@ -42,9 +42,28 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let nav = document.querySelectorAll("nav a")
+let navAdd = document.createElement("a").textContent = 'Feeling Lucky'
+console.log(navAdd)
+
+const aChildAppend = document.createElement("a");
+aChildAppend.href = "#";
+aChildAppend.textContent = "Feeling Lucky!";
+aChildAppend.style.color = "green";
+const butt = document.querySelector("nav");
+butt.appendChild(aChildAppend);
+
+const aPrepend = document.createElement("a");
+aPrepend.href = "#";
+aPrepend.textContent = "Not Lucky?";
+aPrepend.style.color = "green";
+butt.prepend(aPrepend);
+
 
 nav.forEach((a, index) => a.textContent = siteContent.nav['nav-item-' + (index + 1)]);
 console.log(nav)
+
+
+
 
 Array.from(nav).map(a => a.style.color = 'green')
 
